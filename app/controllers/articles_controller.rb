@@ -11,11 +11,11 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  # def create
-  #   @article = Article.new(article_params)
-  #   @article.save
-  #   redirect_to article_path(@article)
-  # end
+  def create
+    @article = Article.new(article_params)
+    @article.save
+    redirect_to article_path(@article)
+  end
 
   # def edit
   #   @article = Article.find(params[:id])
@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
 
   # private
 
-  # def article_params
-  #   params.require(:article).permit(:title, :content)
-  # end
+  def article_params
+    params.require(:article).permit(:title, :content)
+  end
 end
